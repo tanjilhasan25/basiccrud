@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic CRUD Application</title>
+    <!-- Load Tailwind CSS styling framework for clean design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white p-8 max-w-xl mx-auto space-y-6">
+
+    <!-- Page Main Heading -->
+    <h1 class="text-xl font-bold text-cyan-400 text-center">Simple CRUD Table</h1>
+
+    <!-- Form to Create or Update records -->
+    <form id="form" class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-3">
+        <input type="hidden" id="id"> <!-- Hidden input to keep track of item ID when editing -->
+        
+        <!-- Input field for Title -->
+        <input type="text" id="title" placeholder="Enter Title (e.g. Project Name)" required class="w-full p-2 bg-slate-800 rounded border border-slate-700 text-xs">
+        
+        <!-- Input field for Description -->
+        <input type="text" id="desc" placeholder="Enter Description" required class="w-full p-2 bg-slate-800 rounded border border-slate-700 text-xs">
+        
+        <!-- Submit Button -->
+        <button type="submit" id="btn" class="w-full py-2 bg-cyan-400 text-black font-bold rounded text-xs">Save Entry</button>
+    </form>
+
+    <!-- Table to Read and display records from database -->
+    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+        <table class="w-full text-left text-xs">
+            <thead class="bg-slate-800 text-slate-400 uppercase">
+                <tr>
+                    <th class="p-3">Title</th>
+                    <th class="p-3">Description</th>
+                    <th class="p-3 text-right">Action</th>
+                </tr>
+            </thead>
+            <!-- Table body where rows will be dynamically inserted by JavaScript -->
+            <tbody id="tableBody" class="divide-y divide-slate-800"></tbody>
+        </table>
+    </div>
+
+    <!-- Link the JavaScript application logic file -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
